@@ -121,6 +121,26 @@ const HomePage = () => {
       likes: 1,
       shares:9,
     },
+    {
+      _id: 6,
+      content: "JOB POST #job #opportunity for CUETians #Programmer#Full Stack #Java #Python #Html #CSS ",
+      mediaUrl: "https://media.licdn.com/dms/image/v2/D4D22AQHyKcYsSyea_A/feedshare-shrink_800/feedshare-shrink_800/0/1683017337066?e=2147483647&v=beta&t=DSXC042xppIQdQY9IHvhqboZmloOhS2nz7NW7srGiUc",
+      mediaType: "image",
+      jobpost: 1,
+      user: {
+        username: "Rehenuma Ilman",
+        profilePicture: ""
+      },
+      createdAt: "2024-09-20T09:15:00Z",
+      comments: [
+        {
+          text: "Nice video",
+          userName: "Muntaha Alam",
+        }
+      ],
+      likes: 1,
+      shares:9,
+    },
     
   ];
   return (
