@@ -33,12 +33,12 @@ const Header = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme() || {};
-  const {toggleSidebar} = useSidebarStore()
-  const router=useRouter()
+  const { toggleSidebar } = useSidebarStore();
+  const router = useRouter();
 
-  const handleNavigation = (path,item)=>{
-    router.push(path)
-  }
+  const handleNavigation = (path, item) => {
+    router.push(path);
+  };
   useEffect(() => {
     setMounted(true);
   }, []);
@@ -72,6 +72,14 @@ const Header = () => {
                         {/* <AvatarImage src="/Images/user-placeholder.jpg" /> */}
                         <AvatarFallback>T</AvatarFallback>
                       </Avatar>
+                      {/* <Avatar className='h-10 w-10 rounded-full overflow-hidden'>
+                                                 <AvatarImage
+                                                 src="https://media.istockphoto.com/id/498309616/photo/great-ocean-road-at-night-milky-way-view.jpg?s=612x612&w=0&k=20&c=fJGWCAB4JoXaQD6gjJRHjPmPIRvx5e6K-1Oq2EeOZwk="
+                                                 alt="image avatar"
+                                                 className="w-full h-full object-cover"
+                                                 />
+                                                  <AvatarFallback>T</AvatarFallback>
+                                              </Avatar> */}
                       <span>Nusrat Tazin</span>
                     </div>
                   </div>
@@ -90,77 +98,111 @@ const Header = () => {
               key={name}
               variant="ghost"
               size="icon"
-              className="relative text-gray-600 dark:text-gray-400 hover:text-blue-600 hover:bg-transparent" onClick={()=>handleNavigation(path)}
+              className="relative text-gray-600 dark:text-gray-400 hover:text-blue-600 hover:bg-transparent"
+              onClick={() => handleNavigation(path)}
             >
               <Icon />
             </Button>
           ))}
         </nav>
         <div className="flex space-x-2 md:space-x-4 items-center">
-          <Button variant="ghost" size="icon" className="md:hidden text-gray-600 cursor-pointer"
-          onClick={toggleSidebar}>
+          <Button
+            variant="ghost"
+            size="icon"
+            className="md:hidden text-gray-600 cursor-pointer"
+            onClick={toggleSidebar}
+          >
             <Menu />
           </Button>
-          <Button variant="ghost" size="icon" className="hidden md:block text-gray-600 pl-2">
+          <Button
+            variant="ghost"
+            size="icon"
+            className="hidden md:block text-gray-600 pl-2"
+          >
             <Bell />
           </Button>
-          <Button variant="ghost" size="icon" className="hidden md:block text-gray-600 pl-2">
+          <Button
+            variant="ghost"
+            size="icon"
+            className="hidden md:block text-gray-600 pl-2"
+          >
             <MessageCircle />
           </Button>
           <DropdownMenu>
-  <DropdownMenuTrigger asChild>
-    <Button variant="ghost" className="relative h-8 w-8 rounded-full">
-      <Avatar>
-        {/* <AvatarImage src="/Images/user-placeholder.png" /> */}
-        <AvatarFallback>T</AvatarFallback>
-      </Avatar>
-    </Button>
-  </DropdownMenuTrigger>
-  <DropdownMenuContent className="w-64 z-50" align="end">
-    <DropdownMenuLabel className="font-normal">
-      <div className="flex flex-col space-y-1">
-        <div className="flex items-center">
-          <Avatar className="h-8 w-8 mr-2">
-            <AvatarImage src="/Images/user-placeholder.png" />
-            <AvatarFallback>T</AvatarFallback>
-          </Avatar>
-          <span>Nusrat Tazin</span>
-        </div>
-        <p className="text-sm leading-none text-muted-foreground">abc@gmail.com</p>
-      </div>
-    </DropdownMenuLabel>
-    <DropdownMenuSeparator />
-    <DropdownMenuItem className="cursor-pointer">
-      <MessageCircle className="mr-2" />
-      <span>Messages</span>
-    </DropdownMenuItem>
-    <DropdownMenuItem className="cursor-pointer">
-      <Home className="mr-2" />
-      <span>Profile</span>
-    </DropdownMenuItem>
-    <DropdownMenuItem
-      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className="cursor-pointer"
-    >
-      {theme === "light" ? (
-        <>
-          <Moon className="mr-2" />
-          <span>Dark Mode</span>
-        </>
-      ) : (
-        <>
-          <Sun className="mr-2" />
-          <span>Light Mode</span>
-        </>
-      )}
-    </DropdownMenuItem>
-    <DropdownMenuItem className="cursor-pointer">
-      <LogOut className="mr-2" />
-      <span>Logout</span>
-    </DropdownMenuItem>
-  </DropdownMenuContent>
-</DropdownMenu>
-
+            <DropdownMenuTrigger asChild>
+              <Button variant="ghost" className="relative h-8 w-8 rounded-full">
+                <Avatar className="h-10 w-10 rounded-full overflow-hidden">
+                  <AvatarImage
+                    src="https://media.istockphoto.com/id/498309616/photo/great-ocean-road-at-night-milky-way-view.jpg?s=612x612&w=0&k=20&c=fJGWCAB4JoXaQD6gjJRHjPmPIRvx5e6K-1Oq2EeOZwk="
+                    alt="image avatar"
+                    className="w-full h-full object-cover"
+                  />
+                  <AvatarFallback>N</AvatarFallback>
+                </Avatar>
+              </Button>
+              {/*               
+              <div className="flex items-center">
+                    <Avatar className="h-10 w-10 rounded-full overflow-hidden">
+                      <AvatarImage
+                        src="https://media.istockphoto.com/id/498309616/photo/great-ocean-road-at-night-milky-way-view.jpg?s=612x612&w=0&k=20&c=fJGWCAB4JoXaQD6gjJRHjPmPIRvx5e6K-1Oq2EeOZwk="
+                        alt="image avatar"
+                        className="w-full h-full object-cover"
+                      />
+                      <AvatarFallback>N</AvatarFallback>
+                    </Avatar>
+                    <span>Nusrat Tazin</span>
+                  </div> */}
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="w-64 z-50" align="end">
+              <DropdownMenuLabel className="font-normal">
+                <div className="flex flex-col space-y-1">
+                  <div className="flex items-center">
+                    <Avatar className="h-10 w-10 rounded-full overflow-hidden">
+                      <AvatarImage
+                        src="https://media.istockphoto.com/id/498309616/photo/great-ocean-road-at-night-milky-way-view.jpg?s=612x612&w=0&k=20&c=fJGWCAB4JoXaQD6gjJRHjPmPIRvx5e6K-1Oq2EeOZwk="
+                        alt="image avatar"
+                        className="w-full h-full object-cover"
+                      />
+                      <AvatarFallback>N</AvatarFallback>
+                    </Avatar>
+                    <span className="ml-2">Nusrat Tazin</span>
+                  </div>
+                  <p className="text-sm leading-none text-muted-foreground">
+                    nusrattazin34121@gmail.com
+                  </p>
+                </div>
+              </DropdownMenuLabel>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem className="cursor-pointer">
+                <MessageCircle className="mr-2" />
+                <span>Messages</span>
+              </DropdownMenuItem>
+              <DropdownMenuItem className="cursor-pointer">
+                <Home className="mr-2" />
+                <span>Profile</span>
+              </DropdownMenuItem>
+              <DropdownMenuItem
+                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                className="cursor-pointer"
+              >
+                {theme === "light" ? (
+                  <>
+                    <Moon className="mr-2" />
+                    <span>Dark Mode</span>
+                  </>
+                ) : (
+                  <>
+                    <Sun className="mr-2" />
+                    <span>Light Mode</span>
+                  </>
+                )}
+              </DropdownMenuItem>
+              <DropdownMenuItem className="cursor-pointer">
+                <LogOut className="mr-2" />
+                <span>Logout</span>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
       </div>
     </header>

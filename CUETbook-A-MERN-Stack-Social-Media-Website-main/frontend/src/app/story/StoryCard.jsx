@@ -18,13 +18,20 @@ const StoryCard = ({ isAddStory, story, userName, avatarLetter }) => {
           <div className="w-full h-full flex flex-col justify-between">
             {/* Avatar Section */}
             <div className="h-3/4 w-full relative border-b">
-              <Avatar className="w-full h-full">
-                <AvatarImage />
-                <p className="w-full h-full flex justify-center items-center text-4xl">
+              <div className="h-full w-full overflow-hidden">
+                               <img
+                                 src="https://media.istockphoto.com/id/498309616/photo/great-ocean-road-at-night-milky-way-view.jpg?s=612x612&w=0&k=20&c=fJGWCAB4JoXaQD6gjJRHjPmPIRvx5e6K-1Oq2EeOZwk="
+                                 alt="image avatar"
+                                 className="w-full h-full object-cover"
+                               />
+                {/* <p className="w-full h-full flex justify-center items-center text-4xl">
                   T
-                </p>
-              </Avatar>
+                </p> */}
+              </div>
             </div>
+
+
+            
 
             {/* Create Story Section */}
             <div className="h-1/4 w-full bg-white dark:bg-gray-800 flex flex-col items-center justify-center">

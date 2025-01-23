@@ -28,29 +28,30 @@ const NewPostForm = ({ isPostFormOpen, setIsPostFormOpen }) => {
   const [loading, setLoading] = useState(false);
   const [showImageUpload, setShowImageUpload] = useState(false);
 
-  const fileInputRef= useRef(null)
+  const fileInputRef = useRef(null);
   const Picker = dynamic(() => import("emoji-picker-react"), { ssr: false });
 
-  
   const handleEmojiClick = (emojiObject) => {
     setPostContent((prev) => prev + emojiObject.emoji);
   };
-
 
   return (
     <Card>
       <CardContent className="p-4">
         <div className="flex space-x-4">
-          <Avatar>
-              <AvatarImage/>
-              <AvatarFallback className="dark:bg-gray-400">R
-              </AvatarFallback>
+          <Avatar className="h-10 w-10 rounded-full overflow-hidden">
+            <AvatarImage
+              src="https://media.istockphoto.com/id/498309616/photo/great-ocean-road-at-night-milky-way-view.jpg?s=612x612&w=0&k=20&c=fJGWCAB4JoXaQD6gjJRHjPmPIRvx5e6K-1Oq2EeOZwk="
+              alt="image avatar"
+              className="w-full h-full object-cover"
+            />
+            <AvatarFallback className="dark:bg-gray-400">N</AvatarFallback>
           </Avatar>
 
           <Dialog open={isPostFormOpen} onOpenChange={setIsPostFormOpen}>
             <DialogTrigger className="w-full">
               <Input
-                placeholder={`what's on your mind,Rashme`}
+                placeholder={`what's on your mind, Nusrat Tazin?`}
                 readOnly
                 className="cursor-pointer rounded-full h-12  dark:bg-[rgb(58,59,60)] placeholder:text-gray-500 dark:placeholder:text-gray-400  "
               />
@@ -85,12 +86,18 @@ const NewPostForm = ({ isPostFormOpen, setIsPostFormOpen }) => {
               </DialogHeader>
               <Separator />
               <div className="flex items-center space-x-3 py-4">
-                <Avatar className="h-10 w-10">
-                    <AvatarImage/>
-                    <AvatarFallback className="dark:bg-gray-400">Rashme</AvatarFallback>
+                <Avatar className="h-10 w-10 rounded-full overflow-hidden">
+                  <AvatarImage
+                    src="https://media.istockphoto.com/id/498309616/photo/great-ocean-road-at-night-milky-way-view.jpg?s=612x612&w=0&k=20&c=fJGWCAB4JoXaQD6gjJRHjPmPIRvx5e6K-1Oq2EeOZwk="
+                    alt="image avatar"
+                    className="w-full h-full object-cover"
+                  />
+                  <AvatarFallback className="dark:bg-gray-400">
+                    N
+                  </AvatarFallback>
                 </Avatar>
                 <div>
-                  <p className="font-semibold">Rashme</p>
+                  <p className="font-semibold">Nusrat Tazin</p>
                 </div>
               </div>
               <Textarea
@@ -98,40 +105,40 @@ const NewPostForm = ({ isPostFormOpen, setIsPostFormOpen }) => {
                 className="min-h-[100px] text-lg"
               />
               <AnimatePresence>
-                  <motion.div
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: "auto" }}
-                    exit={{ opacity: 0, height: 0 }}
-                    className="relative mt-4 border-2 border-dashed  border-gray-300 rounded-lg p-8 flex  flex-col items-center justify-center "
+                <motion.div
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: "auto" }}
+                  exit={{ opacity: 0, height: 0 }}
+                  className="relative mt-4 border-2 border-dashed  border-gray-300 rounded-lg p-8 flex  flex-col items-center justify-center "
+                >
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="absolute top-2 right-2"
                   >
-                    <Button
-                      variant="ghost"
-                      size="icon"
-                      className="absolute top-2 right-2">
-                    
-                      <X className="h-4 w-4" />
-                    </Button>
+                    <X className="h-4 w-4" />
+                  </Button>
 
-                    {filePreview ? (
-                      fileType.startsWith("image") ? (
-                        <img/>
-                       
-                      ) : (
-                        <video/>)
+                  {filePreview ? (
+                    fileType.startsWith("image") ? (
+                      <img />
                     ) : (
-                      <>
-                        <Plus className="h-12 w-12 text-gray-400 mb-2 cursor-pointer "/>
-                        <p className="text-center  text-gray-500 ">
-                          Add Photos/Videos
-                        </p>
-                      </>
-                    )}
-                    <input
-                      type="file"
-                      accept="image/*,video/*"
-                      className="hidden"
-                    />
-                  </motion.div>
+                      <video />
+                    )
+                  ) : (
+                    <>
+                      <Plus className="h-12 w-12 text-gray-400 mb-2 cursor-pointer " />
+                      <p className="text-center  text-gray-500 ">
+                        Add Photos/Videos
+                      </p>
+                    </>
+                  )}
+                  <input
+                    type="file"
+                    accept="image/*,video/*"
+                    className="hidden"
+                  />
+                </motion.div>
               </AnimatePresence>
 
               <div className="bg-gray-200 dark:bg-muted p-4 rounded-lg mt-4 ">
@@ -139,8 +146,7 @@ const NewPostForm = ({ isPostFormOpen, setIsPostFormOpen }) => {
 
                 <div className="flex space-x-2 ">
                   <Button variant="outline" size="icon">
-                    <ImageIcon className="h-4 w-4 text-green-500 " 
-                     />
+                    <ImageIcon className="h-4 w-4 text-green-500 " />
                   </Button>
                   <Button variant="outline" size="icon">
                     <Video className="h-4 w-4 text-red-500 " />
@@ -148,7 +154,7 @@ const NewPostForm = ({ isPostFormOpen, setIsPostFormOpen }) => {
                   <Button
                     variant="outline"
                     size="icon"
-                    onClick={()=>setShowEmojiPicker(!showEmojiPicker)}
+                    onClick={() => setShowEmojiPicker(!showEmojiPicker)}
                   >
                     <Laugh className="h-4 w-4 text-orange-500 " />
                   </Button>
@@ -166,18 +172,15 @@ const NewPostForm = ({ isPostFormOpen, setIsPostFormOpen }) => {
                     variant="ghost"
                     size="icon"
                     className="absolute top-2 right-2 z-10"
-                    onClick={()=>setShowEmojiPicker(false)}
-                   
+                    onClick={() => setShowEmojiPicker(false)}
                   >
                     <X className="h-4 w-4" />
                   </Button>
-                 <Picker onEmojiClick={handleEmojiClick}/>
+                  <Picker onEmojiClick={handleEmojiClick} />
                 </motion.div>
               )}
               <div className="flex justify-end mt-4">
-                <Button className="bg-blue-500 text-white" >
-                    post
-                </Button>
+                <Button className="bg-blue-500 text-white">post</Button>
               </div>
             </DialogContent>
           </Dialog>
