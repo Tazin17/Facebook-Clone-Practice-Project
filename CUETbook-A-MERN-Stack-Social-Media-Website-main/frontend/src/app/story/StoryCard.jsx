@@ -13,7 +13,7 @@ const StoryCard = ({ isAddStory, story, userName, avatarLetter }) => {
       className="w-40 h-60 relative overflow-hidden group cursor-pointer rounded-xl"
       onClick={isAddStory ? undefined : handleStoryClick}
     >
-      <CardContent className="p-0 h-full">
+      <CardContent className="p-0 h-full text-gray-200">
         {isAddStory ? (
           <div className="w-full h-full flex flex-col justify-between">
             {/* Avatar Section */}
@@ -87,7 +87,7 @@ const StoryCard = ({ isAddStory, story, userName, avatarLetter }) => {
 
 const StoryCardsContainer = () => {
   return (
-    <div className="flex space-x-4">
+    <div className="flex space-x-4 ">
       <StoryCard
         isAddStory={true}
         userName="Nusrat Tazin"

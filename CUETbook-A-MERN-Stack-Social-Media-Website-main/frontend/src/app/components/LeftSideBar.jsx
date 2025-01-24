@@ -58,6 +58,7 @@ const LeftSideBar = () => {
                     <Button
                     variant = "ghost"
                     className="w-full justify-start"
+                    onClick={()=>handleNavigation('/user-profile')}
                     >
                         <User className='mr-4'/> Profile
                     </Button>

@@ -114,7 +114,7 @@ const FriendRequest = ({ friend }) => {
           </Button>
         </div>
       </motion.div>
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0, x: 50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.3 }}
@@ -139,7 +139,7 @@ const FriendRequest = ({ friend }) => {
             <UserMinus className="mr-2 h-4 w-4" /> Delete
           </Button>
         </div>
-      </motion.div>
+      </motion.div> */}
     </AnimatePresence>
   );
 };
