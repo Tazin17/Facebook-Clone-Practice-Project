@@ -69,7 +69,12 @@ const PostContent = ({post}) => {
   <div className="flex items-center justify-between mb-4">
     <div className="flex items-center space-x-3 cursor-pointer">
     <Avatar>
-              <AvatarImage/>
+              <AvatarImage
+              
+              src="https://media.istockphoto.com/id/498309616/photo/great-ocean-road-at-night-milky-way-view.jpg?s=612x612&w=0&k=20&c=fJGWCAB4JoXaQD6gjJRHjPmPIRvx5e6K-1Oq2EeOZwk="
+                            alt="image avatar"
+                            className="w-full h-full object-cover"
+              />
               <AvatarFallback className="dark:bg-gray-400">
                 {post?.user.username[0]} {/* Default to the first letter of the username if no profile image */}
               </AvatarFallback>

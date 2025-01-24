@@ -94,6 +94,7 @@ const Header = () => {
             { icon: Video, path: "/video-feed", name: "video" },
             { icon: Users, path: "/friends-list", name: "friends" },
           ].map(({ icon: Icon, path, name }) => (
+            <div className="group">
             <Button
               key={name}
               variant="ghost"
@@ -103,6 +104,9 @@ const Header = () => {
             >
               <Icon />
             </Button>
+            </div>
+
+
           ))}
         </nav>
         <div className="flex space-x-2 md:space-x-4 items-center">
