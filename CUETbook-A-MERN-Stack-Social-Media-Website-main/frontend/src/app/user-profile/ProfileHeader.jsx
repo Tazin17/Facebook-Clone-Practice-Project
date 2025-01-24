@@ -82,10 +82,10 @@ const ProfileHeader = ({
                               />
                               <AvatarFallback>N</AvatarFallback>
                             </Avatar> */}
-            <AvatarFallback className="dark:bg-gray-400">R</AvatarFallback>
+            <AvatarFallback className="dark:bg-gray-400">N</AvatarFallback>
           </Avatar>
           <div className="mt-4 md:mt-0 text-center md:text-left flex-grow">
-            <h1 className="text-3xl font-bold">Nusrat Tazin</h1>
+            <h1 className="text-3xl font-bold text-white">Nusrat Tazin</h1>
             {/* New Role, Department, ID, Batch, Graduation Year Display */}
             <div className="text-gray-500 font-medium mt-10 ">
               <p>{role}</p>
