@@ -157,9 +157,9 @@ const page = () => {
               </TabsContent>
               {/*login ends*/}
 
-              <TabsContent value="signup" className="mt-500">
+              <TabsContent value="signup">
                 <form>
-                  <div className="grid grid-cols-2 gap-6">
+                  {/* <div className="grid grid-cols-2 gap-6"> */}
                     {/* Column 1 */}
                     <div className="space-y-4">
                       <div className="space-y-2">
@@ -260,7 +260,7 @@ const page = () => {
                         )}
                       </div>
                     </div>
-                  </div>
+                  {/* </div> */}
 
                   <Button className="w-full mt-6" type="submit">
                     <LogIn className="mr-2 w-4 h-4" /> Sign Up
