@@ -5,7 +5,7 @@ const userSchema = new mongoose.Schema({
     email:{type:String,required:true,unique:true},
     password:{type:String,default:null},
     gender:{type:String,default:null},
-    dateofBirth:{type:Date,default:null},
+    dateOfBirth:{type:Date,default:null},
     profilepicture:{type:String,default:null},
     coverPhoto:{type:String,default:null},
     followers:[{type:mongoose.Schema.Types.ObjectId, ref:'User'}],

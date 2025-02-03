@@ -1,4 +1,4 @@
-const response = (res,stateCode,message,date=null)=>{
+const response = (res,stateCode,message,data=null)=>{
     const responseObject ={
         status: stateCode<400 ? 'success' : 'error',
         message,
