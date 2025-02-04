@@ -69,4 +69,17 @@ const loginUser = async (req, res) => {
   }
 };
 
-module.exports = { registerUser,loginUser };
+const logout = (req, res) => {
+  try {
+    res.cookie("auth_token", "", {
+      httpOnly: true,
+      expires: new Date(0),
+    });
+    return response(res, 200, "User loggod out successfully");
+  } catch (error) {
+    console.log(error);
+    return response(res, 500, "Internal server error", error.message);
+  }
+};
+
+module.exports = { registerUser, loginUser, logout };
